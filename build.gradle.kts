@@ -32,3 +32,20 @@ tasks.withType<Jar> {
         attributes["Main-Class"] = "dev.marfien.thelistener.TheListener"
     }
 }
+
+tasks.register("install") {
+    dependsOn(tasks.shadowJar)
+    doLast {
+        copy {
+            from(tasks.shadowJar.get().archiveFile)
+            into("/opt/thelistener/bin/")
+            rename { "the-listener.jar" }
+        }
+    }
+    doLast {
+        copy {
+            from("src/main/shell/listen")
+            into("/usr/local/sbin/")
+        }
+    }
+}

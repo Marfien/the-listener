@@ -263,7 +263,7 @@ public class TheListener {
     }
 
     private static void printSmily() {
-        if (lastEmotens.size() > 2 || random.nextDouble() > 0.2) {
+        if (lastEmotens.size() > 2 || random.nextDouble() > 0.4) {
             printSmily(-1);
             lastEmotens.clear();
         } else {
