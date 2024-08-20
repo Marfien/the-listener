@@ -7,6 +7,7 @@ Then just type
 ```shell
 ./gradlew shadowJar
 ```
+to get the executable in `build/libs/`. Now you can run it with `java -jar <path-to-the-listener-jar>
 
 Or to install it on your linux system:
 ```shell
